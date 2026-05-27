@@ -269,7 +269,7 @@
     .ambiance-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 380px 380px;
+      grid-template-rows: minmax(440px, auto) 380px;
       gap: 16px;
     }
     .a-photo {
@@ -292,8 +292,16 @@
     .a-text {
       background: rgba(255,255,255,.03);
       border: 1px solid var(--or-dim);
-      padding: 44px 40px;
+      padding: 48px 40px;
       display: flex; flex-direction: column; justify-content: center;
+    }
+    .a-text .label {
+      align-self: flex-start;
+      margin-bottom: 18px;
+    }
+    .a-text .btn-gold {
+      align-self: flex-start;
+      white-space: nowrap;
     }
 
     /* ─── STATS BAR ──────────────────────────────── */
