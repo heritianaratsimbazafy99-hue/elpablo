@@ -630,9 +630,9 @@
         white-space: nowrap;
       }
       .hero-title .char {
-        opacity: 1;
-        transform: none;
-        animation: none;
+        opacity: 0;
+        transform: translateY(34px) rotate(4deg);
+        animation: charReveal .55s cubic-bezier(.16,1,.3,1) forwards;
       }
       .hero-lounge {
         font-size: .78rem;
@@ -768,6 +768,12 @@
         height: auto;
         aspect-ratio: 4 / 3;
       }
+      .vip-photo.rv-l,
+      .vip-photo.rv-l.on {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
       .vip-text {
         padding: 52px 20px;
       }
@@ -779,6 +785,12 @@
       .gallery-head { margin-bottom: 32px; }
       .gallery-grid { columns: 1; }
       .g-item { margin-bottom: 10px; }
+      #gallery .g-item.rv,
+      #gallery .g-item.rv.on {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
 
       #reservation::before { font-size: 78vw; }
       .res-title {
