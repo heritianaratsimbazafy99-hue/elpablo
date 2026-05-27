@@ -68,14 +68,14 @@
     }
 
     /* ─── NAVBAR ─────────────────────────────────── */
-    nav {
+    #navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       padding: 22px 52px;
       display: flex; justify-content: space-between; align-items: center;
       transition: background .45s, backdrop-filter .45s, padding .45s, border-color .45s;
       border-bottom: 1px solid transparent;
     }
-    nav.scrolled {
+    #navbar.scrolled {
       background: rgba(7,7,7,.88);
       backdrop-filter: blur(24px) saturate(160%);
       padding: 14px 52px;
@@ -533,8 +533,8 @@
 
     /* ─── RESPONSIVE ─────────────────────────────── */
     @media (max-width: 900px) {
-      nav { padding: 16px 24px; }
-      nav.scrolled { padding: 12px 24px; }
+      #navbar { padding: 16px 24px; }
+      #navbar.scrolled { padding: 12px 24px; }
       .nav-links { display: none; }
       #ambiance, #events, #gallery, #reservation { padding: 90px 24px; }
       .ambiance-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
