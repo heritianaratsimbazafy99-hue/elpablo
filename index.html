@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>El Pablo — Lounge Bar · Antananarivo</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -24,7 +25,10 @@
       --blanc:      #FAFAFA;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
 
     body {
       background: var(--noir);
@@ -34,6 +38,8 @@
       overflow-x: hidden;
       cursor: none;
     }
+
+    img { max-width: 100%; }
 
     /* ─── NOISE OVERLAY ─────────────────────────── */
     body::after {
@@ -557,8 +563,273 @@
       .stat-divider { display: none; }
     }
 
+    @media (max-width: 700px) {
+      body { cursor: auto; }
+      body::after { opacity: .02; }
+      .cursor,
+      .cursor-ring { display: none; }
+      .rv-l,
+      .rv-r {
+        transform: translateY(32px);
+      }
+
+      #navbar {
+        padding: 14px 16px;
+        gap: 14px;
+      }
+      #navbar.scrolled { padding: 10px 16px; }
+      .nav-logo {
+        font-size: 1.28rem;
+        letter-spacing: .13em;
+        white-space: nowrap;
+      }
+      .nav-logo-dot { display: none; }
+      .nav-cta {
+        padding: 10px 14px;
+        min-height: 40px;
+        font-size: .62rem;
+        letter-spacing: .14em;
+      }
+
+      #hero {
+        min-height: 560px;
+        height: 100svh;
+        align-items: center;
+        padding: 86px 0 46px;
+      }
+      .hero-bg {
+        background-position: center top;
+        transform: scale(1.04);
+      }
+      .hero-vignette {
+        background: radial-gradient(ellipse 120% 70% at 50% 36%, transparent 0%, rgba(7,7,7,.72) 78%);
+      }
+      .hero-overlay {
+        background: linear-gradient(180deg,
+          rgba(7,7,7,.1) 0%,
+          rgba(7,7,7,.2) 32%,
+          rgba(7,7,7,.72) 68%,
+          rgba(7,7,7,1) 100%
+        );
+      }
+      .hero-content {
+        width: 100%;
+        padding: 0 18px;
+      }
+      .hero-eyebrow {
+        font-size: .88rem;
+        letter-spacing: .16em;
+        opacity: 1;
+        animation: none;
+      }
+      .hero-title {
+        font-size: clamp(3.75rem, 20vw, 5rem);
+        line-height: .9;
+        letter-spacing: .015em;
+        margin: 10px 0 8px;
+        white-space: nowrap;
+      }
+      .hero-title .char {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+      .hero-lounge {
+        font-size: .78rem;
+        letter-spacing: .24em;
+        line-height: 1.7;
+        opacity: 1;
+        animation: none;
+        margin-bottom: 28px;
+      }
+      .hero-actions {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        opacity: 1;
+        animation: none;
+      }
+      .btn-gold,
+      .btn-outline {
+        width: min(100%, 330px);
+        min-height: 48px;
+        padding: 15px 18px;
+        text-align: center;
+        letter-spacing: .16em;
+      }
+      .hero-scroll { display: none; }
+
+      .marquee-band { padding: 10px 0; }
+      .marquee-item {
+        font-size: .9rem;
+        letter-spacing: .16em;
+        padding: 0 26px;
+        gap: 26px;
+      }
+
+      #ambiance,
+      #events,
+      #gallery,
+      #reservation {
+        padding: 68px 18px;
+      }
+      .label {
+        font-size: .6rem;
+        letter-spacing: .24em;
+        line-height: 1.5;
+      }
+      .h2 {
+        font-size: clamp(2.55rem, 15vw, 4rem);
+        line-height: .95;
+      }
+      .italic {
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+      .body-text {
+        font-size: .92rem;
+        line-height: 1.75;
+      }
+
+      .ambiance-top { margin-bottom: 32px; }
+      .ambiance-grid { gap: 12px; }
+      .a-photo {
+        height: auto;
+        aspect-ratio: 4 / 3;
+      }
+      .a-tall { aspect-ratio: 3 / 4; }
+      .a-photo-caption {
+        left: 14px;
+        bottom: 14px;
+      }
+      .a-text {
+        padding: 30px 20px;
+      }
+
+      .stats-bar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 24px 18px;
+        gap: 18px 12px;
+      }
+      .stat-item:last-child {
+        grid-column: 1 / -1;
+      }
+      .stat-num { font-size: 2.2rem; }
+      .stat-lbl {
+        display: block;
+        font-size: .56rem;
+        letter-spacing: .18em;
+        line-height: 1.5;
+      }
+
+      .events-top {
+        margin-bottom: 28px;
+        gap: 16px;
+      }
+      .events-note {
+        max-width: none;
+        font-size: .92rem;
+      }
+      .events-grid { gap: 10px; }
+      .event-card {
+        padding: 30px 22px;
+      }
+      .event-day-label {
+        font-size: .58rem;
+        letter-spacing: .2em;
+        line-height: 1.5;
+      }
+      .event-artist { font-size: 2.25rem; }
+      .tag {
+        letter-spacing: .12em;
+        line-height: 1.4;
+      }
+      .event-ghost-letter { font-size: 6.5rem; }
+
+      #dj-scene {
+        min-height: 560px;
+        padding: 72px 0;
+      }
+      .dj-bg { background-position: center; }
+      .dj-overlay {
+        background: linear-gradient(180deg, rgba(7,7,7,.68) 0%, rgba(7,7,7,.94) 58%, rgba(7,7,7,.98) 100%);
+      }
+      .dj-quote {
+        font-size: clamp(1.65rem, 9vw, 2.35rem);
+        line-height: 1.35;
+      }
+      .dj-roster {
+        gap: 18px;
+        flex-direction: column;
+      }
+
+      .vip-photo {
+        height: auto;
+        aspect-ratio: 4 / 3;
+      }
+      .vip-text {
+        padding: 52px 20px;
+      }
+      .vip-text .btn-gold,
+      .vip-text .btn-outline {
+        width: 100%;
+      }
+
+      .gallery-head { margin-bottom: 32px; }
+      .gallery-grid { columns: 1; }
+      .g-item { margin-bottom: 10px; }
+
+      #reservation::before { font-size: 78vw; }
+      .res-title {
+        font-size: clamp(3.25rem, 18vw, 5.2rem);
+      }
+      .phone-link {
+        font-size: clamp(1.75rem, 8vw, 2.35rem);
+        letter-spacing: .06em;
+        overflow-wrap: anywhere;
+      }
+      .address {
+        font-size: .98rem;
+        line-height: 1.55;
+        letter-spacing: .04em;
+      }
+
+      footer {
+        align-items: flex-start;
+        text-align: left;
+        padding: 32px 18px;
+      }
+      .footer-copy {
+        line-height: 1.6;
+        letter-spacing: .08em;
+      }
+      .footer-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-title { font-size: clamp(3.75rem, 24vw, 5.1rem); }
+      .nav-logo { font-size: 1.12rem; }
+      .nav-cta { padding-inline: 11px; }
+      .h2 { font-size: clamp(2.35rem, 14vw, 3.4rem); }
+      .stats-bar { grid-template-columns: 1fr; }
+      .stat-item:last-child { grid-column: auto; }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      body { cursor: auto; }
+      .cursor,
+      .cursor-ring { display: none; }
+      .a-photo:hover img,
+      .g-item:hover img { transform: none; }
+      .g-item::after { display: none; }
+    }
+
     @media (max-width: 480px) {
-      .hero-title { font-size: clamp(4rem, 22vw, 7rem); }
       .gallery-grid { columns: 1; }
     }
 
@@ -908,23 +1179,27 @@
   (function() {
 
     /* ── Custom cursor ───────────────────────────── */
+    const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     const dot  = document.getElementById('cursor');
     const ring = document.getElementById('cursor-ring');
-    let mx = -100, my = -100, rx = -100, ry = -100;
 
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.left = mx + 'px';
-      dot.style.top  = my + 'px';
-    });
+    if (hasFinePointer) {
+      let mx = -100, my = -100, rx = -100, ry = -100;
 
-    (function animRing() {
-      rx += (mx - rx) * 0.14;
-      ry += (my - ry) * 0.14;
-      ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
-      requestAnimationFrame(animRing);
-    })();
+      document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + 'px';
+        dot.style.top  = my + 'px';
+      });
+
+      (function animRing() {
+        rx += (mx - rx) * 0.14;
+        ry += (my - ry) * 0.14;
+        ring.style.left = rx + 'px';
+        ring.style.top  = ry + 'px';
+        requestAnimationFrame(animRing);
+      })();
+    }
 
     /* ── Navbar on scroll ───────────────────────── */
     const navbar = document.getElementById('navbar');
@@ -967,7 +1242,8 @@
       };
     }
 
-    const PTCLS = Array.from({ length: 28 }, makeParticle);
+    const particleCount = window.matchMedia('(max-width: 700px)').matches ? 12 : 28;
+    const PTCLS = Array.from({ length: particleCount }, makeParticle);
 
     function drawSmoke() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -1000,7 +1276,7 @@
 
     window.addEventListener('scroll', () => {
       const sy = window.scrollY;
-      heroBg.style.transform = `scale(1.12) translateY(${sy * 0.28}px)`;
+      heroBg.style.transform = `${window.innerWidth <= 700 ? 'scale(1.04)' : 'scale(1.12)'} translateY(${sy * 0.28}px)`;
 
       const djRect = document.getElementById('dj-scene').getBoundingClientRect();
       if (djRect.top < window.innerHeight && djRect.bottom > 0) {
